@@ -1,0 +1,49 @@
+13: Unable to locate extend class BS.
+37: Method Test has already been declared.
+184: Method override for "Test" does not match previous definition.
+3: Object "DS" has not been declared.
+3: Class object "DS" is undefined.
+20: Symbol "siz" has not been declared.
+20: Mismatched lhs & rhs in assignment statement.
+21: Expecting int type for array index.
+22: Unable to determine "this" reference.
+22: Function call "Compare" is undefined.
+22: Mismatched lhs & rhs in assignment statement.
+23: Unable to determine "this" reference.
+23: Function call "Compare" is undefined.
+23: Mismatched lhs & rhs in assignment statement.
+24: Unable to determine "this" reference.
+24: Function call "Compare" is undefined.
+24: Mismatched lhs & rhs in assignment statement.
+25: Expecting boolean operand types in and operation.
+25: Mismatched lhs & rhs in assignment statement.
+26: Expecting int operand types in multiply operation.
+26: Mismatched lhs & rhs in assignment statement.
+27: Expecting int operand types in add operation.
+27: Mismatched lhs & rhs in assignment statement.
+29: Expecting boolean type for if condition.
+15: Mismatched function call return type for Start.
+52: Unable to determine "this" reference.
+53: Unable to determine "this" reference.
+53: Function call "Foo" is undefined.
+53: Mismatched lhs & rhs in assignment statement.
+54: Unable to determine "this" reference.
+56: Unable to determine "this" reference.
+58: Unable to determine "this" reference.
+60: Unable to determine "this" reference.
+62: Unable to determine "this" reference.
+64: Unable to determine "this" reference.
+66: Unable to determine "this" reference.
+68: Unable to determine "this" reference.
+70: Unable to determine "this" reference.
+96: Expecting int operand types in add operation.
+96: Mismatched lhs & rhs in assignment statement.
+98: Unable to determine "this" reference.
+102: Unable to determine "this" reference.
+95: Expecting boolean type for while loop condition.
+108: Unable to determine "this" reference.
+108: Mismatched lhs & rhs in assignment statement.
+109: Mismatched lhs & rhs in assignment statement.
+176: Expecting int type for array index.
+185: Symbol "sz" has not been declared.
+48 errors were found.

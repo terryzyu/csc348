@@ -1,0 +1,52 @@
+{CLASS}class BS
+    Variables:
+        {VAR}int[] number
+        {VAR}int size
+    Methods:
+        {METHOD}int Div({VAR}int num)
+        {METHOD}int Print()
+        {METHOD}int Init({VAR}int sz)
+        {METHOD}int Start({VAR}int sz)
+        {METHOD}boolean Search({VAR}int num)
+        {METHOD}boolean Compare({VAR}int num1, {VAR}int num2)
+    {VAR}int[] number
+    {VAR}int size
+    {METHOD}boolean Compare({VAR}int num1, {VAR}int num2)
+        {VAR}int aux02
+        {VAR}int num1
+        {VAR}int num2
+        {VAR}boolean retval
+    {METHOD}int Div({VAR}int num)
+        {VAR}int aux03
+        {VAR}int count01
+        {VAR}int count02
+        {VAR}int num
+    {METHOD}int Init({VAR}int sz)
+        {VAR}int aux01
+        {VAR}int aux02
+        {VAR}int j
+        {VAR}int k
+        {VAR}int sz
+    {METHOD}int Print()
+        {VAR}int j
+    {METHOD}boolean Search({VAR}int num)
+        {VAR}int aux01
+        {VAR}boolean bs01
+        {VAR}int left
+        {VAR}int medium
+        {VAR}int nt
+        {VAR}int num
+        {VAR}int right
+        {VAR}boolean var_cont
+    {METHOD}int Start({VAR}int sz)
+        {VAR}int aux01
+        {VAR}int aux02
+        {VAR}int sz
+{CLASS}class BinarySearch
+    Methods:
+        {METHOD}void main({VAR}String[] a)
+    {METHOD}void main({VAR}String[] a)
+        {VAR}String[] a
+
+Parsing completed
+0 errors were found.

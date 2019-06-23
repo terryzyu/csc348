@@ -1,0 +1,627 @@
+.data
+BS$:
+        .quad 0
+        .quad BS$Start
+        .quad BS$Search
+        .quad BS$divide
+        .quad BS$Div
+        .quad BS$Compare
+        .quad BS$Print
+        .quad BS$Init
+
+.text
+.globl asm_main
+
+asm_main:
+        pushq   %rbp
+        movq    %rsp, %rbp
+        movq    $32, %rdi
+        call    mjcalloc
+        movabs  $BS$, %rdx
+        movq    %rdx, 0(%rax)
+        pushq   %rax
+        movq    $20, %rax
+        pushq   %rax
+        popq    %rsi
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *8(%rax)
+        movq    %rax, %rdi
+        call    put
+        leave
+        ret
+BS$Start:
+        pushq   %rbp
+        movq    %rsp, %rbp
+        subq    $32, %rsp
+        movq    %rdi, -8(%rbp)
+        movq    %rsi, -16(%rbp)
+        movq    -8(%rbp), %rax
+        pushq   %rax
+        movq    -16(%rbp), %rax
+        pushq   %rax
+        popq    %rsi
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *56(%rax)
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -24(%rbp)
+        movq    -8(%rbp), %rax
+        pushq   %rax
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *48(%rax)
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -32(%rbp)
+        movq    -8(%rbp), %rax
+        pushq   %rax
+        movq    $8, %rax
+        pushq   %rax
+        popq    %rsi
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *16(%rax)
+        cmp     $0, %rax
+        je      L0
+        movq    $1, %rax
+        movq    %rax, %rdi
+        call    put
+        jmp     L1
+L0:
+        movq    $0, %rax
+        movq    %rax, %rdi
+        call    put
+L1:
+        movq    -8(%rbp), %rax
+        pushq   %rax
+        movq    $19, %rax
+        pushq   %rax
+        popq    %rsi
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *16(%rax)
+        cmp     $0, %rax
+        je      L2
+        movq    $1, %rax
+        movq    %rax, %rdi
+        call    put
+        jmp     L3
+L2:
+        movq    $0, %rax
+        movq    %rax, %rdi
+        call    put
+L3:
+        movq    -8(%rbp), %rax
+        pushq   %rax
+        movq    $20, %rax
+        pushq   %rax
+        popq    %rsi
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *16(%rax)
+        cmp     $0, %rax
+        je      L4
+        movq    $1, %rax
+        movq    %rax, %rdi
+        call    put
+        jmp     L5
+L4:
+        movq    $0, %rax
+        movq    %rax, %rdi
+        call    put
+L5:
+        movq    -8(%rbp), %rax
+        pushq   %rax
+        movq    $21, %rax
+        pushq   %rax
+        popq    %rsi
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *16(%rax)
+        cmp     $0, %rax
+        je      L6
+        movq    $1, %rax
+        movq    %rax, %rdi
+        call    put
+        jmp     L7
+L6:
+        movq    $0, %rax
+        movq    %rax, %rdi
+        call    put
+L7:
+        movq    -8(%rbp), %rax
+        pushq   %rax
+        movq    $37, %rax
+        pushq   %rax
+        popq    %rsi
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *16(%rax)
+        cmp     $0, %rax
+        je      L8
+        movq    $1, %rax
+        movq    %rax, %rdi
+        call    put
+        jmp     L9
+L8:
+        movq    $0, %rax
+        movq    %rax, %rdi
+        call    put
+L9:
+        movq    -8(%rbp), %rax
+        pushq   %rax
+        movq    $38, %rax
+        pushq   %rax
+        popq    %rsi
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *16(%rax)
+        cmp     $0, %rax
+        je      L10
+        movq    $1, %rax
+        movq    %rax, %rdi
+        call    put
+        jmp     L11
+L10:
+        movq    $0, %rax
+        movq    %rax, %rdi
+        call    put
+L11:
+        movq    -8(%rbp), %rax
+        pushq   %rax
+        movq    $39, %rax
+        pushq   %rax
+        popq    %rsi
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *16(%rax)
+        cmp     $0, %rax
+        je      L12
+        movq    $1, %rax
+        movq    %rax, %rdi
+        call    put
+        jmp     L13
+L12:
+        movq    $0, %rax
+        movq    %rax, %rdi
+        call    put
+L13:
+        movq    -8(%rbp), %rax
+        pushq   %rax
+        movq    $50, %rax
+        pushq   %rax
+        popq    %rsi
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *16(%rax)
+        cmp     $0, %rax
+        je      L14
+        movq    $1, %rax
+        movq    %rax, %rdi
+        call    put
+        jmp     L15
+L14:
+        movq    $0, %rax
+        movq    %rax, %rdi
+        call    put
+L15:
+        movq    $999, %rax
+        leave
+        ret
+BS$Search:
+        pushq   %rbp
+        movq    %rsp, %rbp
+        subq    $80, %rsp
+        movq    %rdi, -8(%rbp)
+        movq    %rsi, -16(%rbp)
+        movq    $0, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -80(%rbp)
+        movq    $0, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -64(%rbp)
+        movq    $0, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -24(%rbp)
+        movq    -8(%rbp), %rax
+        movq    -8(%rax), %rax
+        movq    0(%rax), %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -32(%rbp)
+        movq    $1, %rax
+        pushq   %rax
+        movq    -32(%rbp), %rax
+        popq    %r10
+        subq    %r10, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -32(%rbp)
+        movq    $0, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -40(%rbp)
+        movq    $1, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -48(%rbp)
+L16:
+        movq    -48(%rbp), %rax
+        cmp     $0, %rax
+        je      L17
+        movq    -40(%rbp), %rax
+        pushq   %rax
+        movq    -32(%rbp), %rax
+        popq    %r10
+        addq    %r10, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -56(%rbp)
+        movq    -8(%rbp), %rax
+        pushq   %rax
+        movq    -56(%rbp), %rax
+        pushq   %rax
+        popq    %rsi
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *32(%rax)
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -56(%rbp)
+        movq    -8(%rbp), %rax
+        movq    -8(%rax), %rax
+        pushq   %rax
+        movq    -56(%rbp), %rax
+        popq    %r10
+        movq    16(%r10,%rax,8), %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -64(%rbp)
+        movq    -16(%rbp), %rax
+        pushq   %rax
+        movq    -64(%rbp), %rax
+        popq    %r10
+        cmpq    %r10, %rax
+        setg    %al
+        movzbq  %al, %rax
+        cmp     $0, %rax
+        je      L18
+        movq    $1, %rax
+        pushq   %rax
+        movq    -56(%rbp), %rax
+        popq    %r10
+        subq    %r10, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -32(%rbp)
+        jmp     L19
+L18:
+        movq    -56(%rbp), %rax
+        pushq   %rax
+        movq    $1, %rax
+        popq    %r10
+        addq    %r10, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -40(%rbp)
+L19:
+        movq    -8(%rbp), %rax
+        pushq   %rax
+        movq    -64(%rbp), %rax
+        pushq   %rax
+        movq    -16(%rbp), %rax
+        pushq   %rax
+        popq    %rdx
+        popq    %rsi
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *40(%rax)
+        cmp     $0, %rax
+        je      L20
+        movq    $0, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -48(%rbp)
+        jmp     L21
+L20:
+        movq    $1, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -48(%rbp)
+L21:
+        movq    -32(%rbp), %rax
+        pushq   %rax
+        movq    -40(%rbp), %rax
+        popq    %r10
+        cmpq    %r10, %rax
+        setg    %al
+        movzbq  %al, %rax
+        cmp     $0, %rax
+        je      L22
+        movq    $0, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -48(%rbp)
+        jmp     L23
+L22:
+        movq    $0, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -72(%rbp)
+L23:
+        movq    -80(%rbp), %rax
+        pushq   %rax
+        movq    $1, %rax
+        popq    %r10
+        addq    %r10, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -80(%rbp)
+        jmp     L16
+L17:
+        movq    -8(%rbp), %rax
+        pushq   %rax
+        movq    -64(%rbp), %rax
+        pushq   %rax
+        movq    -16(%rbp), %rax
+        pushq   %rax
+        popq    %rdx
+        popq    %rsi
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *40(%rax)
+        cmp     $0, %rax
+        je      L24
+        movq    $1, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -24(%rbp)
+        jmp     L25
+L24:
+        movq    $0, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -24(%rbp)
+L25:
+        movq    -24(%rbp), %rax
+        leave
+        ret
+BS$divide:
+        pushq   %rbp
+        movq    %rsp, %rbp
+        subq    $32, %rsp
+        movq    %rdi, -8(%rbp)
+        movq    %rsi, -16(%rbp)
+        movq    %rdx, -24(%rbp)
+        movq    -16(%rbp), %rax
+        pushq   %rax
+        movq    $0, %rax
+        popq    %r10
+        idivq   %r10, %rax
+        leave
+        ret
+BS$Div:
+        pushq   %rbp
+        movq    %rsp, %rbp
+        subq    $16, %rsp
+        movq    %rdi, -8(%rbp)
+        movq    %rsi, -16(%rbp)
+        movq    -8(%rbp), %rax
+        pushq   %rax
+        movq    -16(%rbp), %rax
+        pushq   %rax
+        movq    $2, %rax
+        pushq   %rax
+        popq    %rdx
+        popq    %rsi
+        popq    %rdi
+        movq    0(%rdi), %rax
+        call    *24(%rax)
+        leave
+        ret
+BS$Compare:
+        pushq   %rbp
+        movq    %rsp, %rbp
+        subq    $48, %rsp
+        movq    %rdi, -8(%rbp)
+        movq    %rsi, -16(%rbp)
+        movq    %rdx, -24(%rbp)
+        movq    $0, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -32(%rbp)
+        movq    -24(%rbp), %rax
+        pushq   %rax
+        movq    $1, %rax
+        popq    %r10
+        addq    %r10, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -40(%rbp)
+        movq    -16(%rbp), %rax
+        pushq   %rax
+        movq    -24(%rbp), %rax
+        popq    %r10
+        cmpq    %r10, %rax
+        setg    %al
+        movzbq  %al, %rax
+        cmp     $0, %rax
+        je      L26
+        movq    $0, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -32(%rbp)
+        jmp     L27
+L26:
+        movq    -16(%rbp), %rax
+        pushq   %rax
+        movq    -40(%rbp), %rax
+        popq    %r10
+        cmpq    %r10, %rax
+        setg    %al
+        movzbq  %al, %rax
+        cmpq    $0, %rax
+        sete    %al
+        movzbq  %al, %rax
+        cmp     $0, %rax
+        je      L28
+        movq    $0, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -32(%rbp)
+        jmp     L29
+L28:
+        movq    $1, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -32(%rbp)
+L29:
+L27:
+        movq    -32(%rbp), %rax
+        leave
+        ret
+BS$Print:
+        pushq   %rbp
+        movq    %rsp, %rbp
+        subq    $16, %rsp
+        movq    %rdi, -8(%rbp)
+        movq    $1, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -16(%rbp)
+L30:
+        movq    -16(%rbp), %rax
+        pushq   %rax
+        movq    -8(%rbp), %rax
+        movq    -16(%rax), %rax
+        popq    %r10
+        cmpq    %r10, %rax
+        setg    %al
+        movzbq  %al, %rax
+        cmp     $0, %rax
+        je      L31
+        movq    -8(%rbp), %rax
+        movq    -8(%rax), %rax
+        pushq   %rax
+        movq    -16(%rbp), %rax
+        popq    %r10
+        movq    16(%r10,%rax,8), %rax
+        movq    %rax, %rdi
+        call    put
+        movq    -16(%rbp), %rax
+        pushq   %rax
+        movq    $1, %rax
+        popq    %r10
+        addq    %r10, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -16(%rbp)
+        jmp     L30
+L31:
+        movq    $99999, %rax
+        movq    %rax, %rdi
+        call    put
+        movq    $0, %rax
+        leave
+        ret
+BS$Init:
+        pushq   %rbp
+        movq    %rsp, %rbp
+        subq    $48, %rsp
+        movq    %rdi, -8(%rbp)
+        movq    %rsi, -16(%rbp)
+        movq    -16(%rbp), %rax
+        pushq   %rax
+        movq    -8(%rbp), %rax
+        popq    %r10
+        movq    %r10, -16(%rax)
+        movq    -16(%rbp), %rax
+        pushq   %rax
+        imulq   $8, %rax
+        addq    $16, %rax
+        movq    %rax, %rdi
+        call    mjcalloc
+        popq    0(%rax)
+        movq    $16, 8(%rax)
+        pushq   %rax
+        movq    -8(%rbp), %rax
+        popq    %r10
+        movq    %r10, -8(%rax)
+        movq    $1, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -24(%rbp)
+        movq    -8(%rbp), %rax
+        movq    -16(%rax), %rax
+        pushq   %rax
+        movq    $1, %rax
+        popq    %r10
+        addq    %r10, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -32(%rbp)
+L32:
+        movq    -24(%rbp), %rax
+        pushq   %rax
+        movq    -8(%rbp), %rax
+        movq    -16(%rax), %rax
+        popq    %r10
+        cmpq    %r10, %rax
+        setg    %al
+        movzbq  %al, %rax
+        cmp     $0, %rax
+        je      L33
+        movq    $2, %rax
+        pushq   %rax
+        movq    -24(%rbp), %rax
+        popq    %r10
+        imulq   %r10, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -48(%rbp)
+        movq    $3, %rax
+        pushq   %rax
+        movq    -32(%rbp), %rax
+        popq    %r10
+        subq    %r10, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -40(%rbp)
+        movq    -48(%rbp), %rax
+        pushq   %rax
+        movq    -40(%rbp), %rax
+        popq    %r10
+        addq    %r10, %rax
+        pushq   %rax
+        movq    -8(%rbp), %rax
+        pushq   -8(%rax)
+        movq    -24(%rbp), %rax
+        popq    %r10
+        popq    %rdx
+        movq    %rdx, 16(%r10,%rax,8)
+        movq    -24(%rbp), %rax
+        pushq   %rax
+        movq    $1, %rax
+        popq    %r10
+        addq    %r10, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -24(%rbp)
+        movq    $1, %rax
+        pushq   %rax
+        movq    -32(%rbp), %rax
+        popq    %r10
+        subq    %r10, %rax
+        pushq   %rax
+        popq    %r10
+        movq    %r10, -32(%rbp)
+        jmp     L32
+L33:
+        movq    $0, %rax
+        leave
+        ret
